@@ -1,4 +1,4 @@
-# Test script
+#Automation_Script
 
 package org.example.my_app;
 
@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class AppTest {
-      public static void main(String[] args) { 
+      public static void main(String[] args) {
         // Initialize WebDriver
         WebDriver driver = new ChromeDriver();
 
@@ -17,16 +17,16 @@ public class AppTest {
             driver.get("https://pwiddy.interview.tisostudio.com/");
 
             // Search for the restaurant
-            WebElement searchBox = driver.findElement(By.className("w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500")); // Replace with actual locator
+            WebElement searchBox = driver.findElement(By.cssSelector("input[type='text']")); // Replace with actual locator
             searchBox.sendKeys("West, Mayer and Wintheiser");
-            Thread.sleep(6000000);
+            Thread.sleep(6000);
             
-            WebElement searchButton = driver.findElement(By.className("px-6")); // Replace with actual locator
+            WebElement searchButton = driver.findElement(By.className("button[type='submit']")); // Replace with actual locator
             searchButton.click();
-            Thread.sleep(600000);
+            Thread.sleep(6000);
             
             // Select the restaurant from search results
-            WebElement restaurantLink = driver.findElement(By.className("text-lg font-semibold"));
+            WebElement restaurantLink = driver.findElement(By.className("flex justify-between items-start"));
             restaurantLink.click();
             Thread.sleep(6000);
 
